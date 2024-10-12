@@ -25,9 +25,9 @@ const AddWorkout = () => {
     console.log('Form data being sent:', formData);
     
     try {
-      const response = await axios.post('http://localhost:4000/api/workout', formData);
+      const response = await axios.post('http://localhost:4000/api/workout/', formData);
       console.log('Workout added successfully:', response.data);
-      // Clear form data
+
       setFormData({
         workoutName: '',
         date: '',
@@ -35,7 +35,7 @@ const AddWorkout = () => {
         caloriesBurned: '',
       });
       // Navigate to /workout
-      navigate('/workout');
+      navigate('/workout/1');
     } catch (error) {
       console.error('Error adding workout:', error);
     }

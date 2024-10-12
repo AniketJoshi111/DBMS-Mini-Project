@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const connection = require('../models/db'); // Assuming you have your MySQL connection in db.js
+const connection = require('../models/db');
 
-// CREATE a workout (POST /workouts)
+
 router.post('/', (req, res) => {
     const { User_ID, workoutName, date, duration, caloriesBurned } = req.body;
-    const query = 'INSERT INTO Workouts (User_ID, Workout_Name, Date, Duration, Calories_Burned) VALUES (?, ?, ?, ?, ?)';
+    const query = 'INSERT INTO Workouts(User_ID, Workout_Name, Date, Duration, Calories_Burned) VALUES (?, ?, ?, ?, ?)';
     
     connection.query(query, [User_ID, workoutName, date, duration, caloriesBurned], (err, result) => {
         if (err) {
@@ -15,7 +15,6 @@ router.post('/', (req, res) => {
     });
 });
 
-// READ all workouts (GET /workouts)
 router.get('/', (req, res) => {
     const query = 'SELECT * FROM Workouts';
     

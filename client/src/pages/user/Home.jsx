@@ -9,9 +9,9 @@ const Homepage = () => {
       <h1 className="text-4xl font-bold mb-8 text-gray-800">Welcome to Fitness Tracker</h1>
       <p className="text-lg mb-6 text-gray-700">Track your workouts, progress, and trainer interactions!</p>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-4  gap-12">
         <button
-          onClick={() => navigate('/workout')}
+          onClick={() => navigate('/workout/1')}
           className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600"
         >
           Workout
@@ -19,16 +19,23 @@ const Homepage = () => {
 
         <button
           onClick={() => navigate('/trainer')}
-          className="px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600"
+          className="px-6 py-3 p bg-green-500 text-white font-semibold rounded-md hover:bg-green-600"
         >
           Trainer
         </button>
 
         <button
-          onClick={() => navigate('/workout/1')}
+          onClick={() => navigate('/workout/progress/1')}
           className="px-6 py-3 bg-purple-500 text-white font-semibold rounded-md hover:bg-purple-600"
         >
           Progress
+        </button>
+        
+        <button
+          onClick={() => navigate('/users/add')}
+          className="px-6 py-3 bg-purple-500 text-white font-semibold rounded-md hover:bg-purple-600"
+        >
+          Register 
         </button>
       </div>
     </div>

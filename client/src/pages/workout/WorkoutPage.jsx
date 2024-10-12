@@ -10,7 +10,7 @@ const WorkoutsPage = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/workout'); // Adjust the URL as necessary
+        const response = await axios.get(`http://localhost:4000/api/workout`); // Adjust the URL as necessary
         setWorkouts(response.data);
       } catch (error) {
         console.error('Error fetching workouts:', error);
@@ -43,7 +43,7 @@ const WorkoutsPage = () => {
         <p>No workouts available.</p>
       ) : (
         <ul className="space-y-2">
-          {workouts.map((workout) => (
+        {workouts.map((workout) => (
             <li key={workout.Workout_ID} className="border p-4 rounded">
               <h2 className="text-xl font-semibold">{workout.Workout_name}</h2>
               <p>Date: {new Date(workout.date).toLocaleDateString()}</p>
@@ -52,9 +52,6 @@ const WorkoutsPage = () => {
               <button onClick={() => handleDelete(workout.Workout_ID)}>
                 Remove workout
               </button>
-              <button onClick={() => handleAddExercise(workout.Workout_ID)}>
-              Add Exercises
-            </button>
             </li>
           ))}
         </ul>

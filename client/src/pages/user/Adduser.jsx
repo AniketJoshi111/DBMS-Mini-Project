@@ -21,7 +21,7 @@
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      navigate('/workout');
+      navigate('/');
       try {
         const response = await axios.post('http://localhost:4000/api/users', formData);
         console.log('User added successfully:', response.data);
